@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_application_14/screens/home.dart';
+import 'package:flutter_application_14/screens/userform.dart';
 
 class Login extends StatefulWidget {
   static const routeName = "/Login";
@@ -124,7 +125,13 @@ class _LoginState extends State<Login> {
   Widget registerLink() {
     return InkWell(
       child: const Text("Sign Up"),
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => UserFrom(),
+                settings: RouteSettings(arguments: user)));
+      },
     );
   }
 }
